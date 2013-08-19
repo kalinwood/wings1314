@@ -3,65 +3,12 @@
 <head>
 
 	<meta charset="utf-8" />
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/screen.css">
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	
-	<script>
-
-	$(document).ready(function() {
-  function filterPath(string) {
-  return string
-    .replace(/^\//,'')
-    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-    .replace(/\/$/,'');
-  }
-  var locationPath = filterPath(location.pathname);
-  var scrollElem = scrollableElement('html', 'body');
- 
-  $('a[href*=#]').each(function() {
-    var thisPath = filterPath(this.pathname) || locationPath;
-    if (  locationPath == thisPath
-    && (location.hostname == this.hostname || !this.hostname)
-    && this.hash.replace(/#/,'') ) {
-      var $target = $(this.hash), target = this.hash;
-      if (target) {
-        var targetOffset = $target.offset().top;
-        $(this).click(function(event) {
-          event.preventDefault();
-          $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
-            location.hash = target;
-          });
-        });
-      }
-    }
-  });
- 
-  // use the first element that is "scrollable"
-  function scrollableElement(els) {
-    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
-      var el = arguments[i],
-          $scrollElement = $(el);
-      if ($scrollElement.scrollTop()> 0) {
-        return el;
-      } else {
-        $scrollElement.scrollTop(1);
-        var isScrollable = $scrollElement.scrollTop()> 0;
-        $scrollElement.scrollTop(0);
-        if (isScrollable) {
-          return el;
-        }
-      }
-    }
-    return [];
-  }
- 
-});
-
-	</script>
+	<link rel="stylesheet" href="css/screen.css">
 
 	<title>Detroit Red Wings Schedule 2013-14</title>
 
@@ -89,11 +36,14 @@ body, html {
 
 <body>
 
+	<div class="wrap">
+
 	<div class="unit one-of-four">
 
 		<div class="nav">
 			<img src="images/logo.png">
 			<p class="team">DETROIT RED WINGS</p><p class="header">2013-2014 SCHEDULE</p>
+			<li>
 			<ul><a href="#oct">OCTOBER 2013 </a></ul>
 			<ul><a href="#nov">NOVEMBER 2013 </a></ul>
 			<ul><a href="#dec">DECEMBER 2013 </a></ul>
@@ -101,6 +51,7 @@ body, html {
 			<ul><a href="#feb">FEBRUARY 2014 </a></ul>
 			<ul><a href="#mar">MARCH 2014 </a></ul>
 			<ul><a href="#apr">APRIL 2014 </a></ul>
+			</li>
 		</div>
 	
 	</div>
@@ -212,14 +163,69 @@ body, html {
 		</div>
 	</div>
 
+	</div><!-- end: .wrap-->
+
 <!-- FOOTER START -->
 
-<section class="foot"><a class="feet" href="http://kalinwood.github.io/">Built by the shaky hands of Kalin Wood&copy; in 2013</a></section>
+<section class="footer"><a class="feet" href="http://kalinwood.github.io/">Built by the shaky hands of Kalin Wood&copy; in 2013</a></section>
 
 <!-- FOOTER END -->
 
-
-
 </body>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	
+	<script>
+
+	$(document).ready(function() {
+  function filterPath(string) {
+  return string
+    .replace(/^\//,'')
+    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+    .replace(/\/$/,'');
+  }
+  var locationPath = filterPath(location.pathname);
+  var scrollElem = scrollableElement('html', 'body');
+ 
+  $('a[href*=#]').each(function() {
+    var thisPath = filterPath(this.pathname) || locationPath;
+    if (  locationPath == thisPath
+    && (location.hostname == this.hostname || !this.hostname)
+    && this.hash.replace(/#/,'') ) {
+      var $target = $(this.hash), target = this.hash;
+      if (target) {
+        var targetOffset = $target.offset().top;
+        $(this).click(function(event) {
+          event.preventDefault();
+          $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+            location.hash = target;
+          });
+        });
+      }
+    }
+  });
+ 
+  // use the first element that is "scrollable"
+  function scrollableElement(els) {
+    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+      var el = arguments[i],
+          $scrollElement = $(el);
+      if ($scrollElement.scrollTop()> 0) {
+        return el;
+      } else {
+        $scrollElement.scrollTop(1);
+        var isScrollable = $scrollElement.scrollTop()> 0;
+        $scrollElement.scrollTop(0);
+        if (isScrollable) {
+          return el;
+        }
+      }
+    }
+    return [];
+  }
+ 
+});
+
+	</script>
 
 </html>

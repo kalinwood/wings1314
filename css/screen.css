@@ -1,21 +1,4 @@
-/*-----------------------------------*\
 
-	Toast
-	A Simple CSS Framework
-	=================================
-
-	Values you may want to change:
-	- .container { max-width:; }
-	- p { margin-bottom:; }
-	- html { font:; }
-
-	Remember: no framework will be as
-	good as a custom built, per-
-	project	one. Toast and other
-	frameworks are best used for
-	rapid prototyping.
-
-\*-----------------------------------*/
 
 /*-----------------------------------*\
 	$RESET
@@ -30,6 +13,14 @@
 	        box-sizing: border-box;
 }
 
+ul, 
+ol, 
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 /*-----------------------------------*\
 	$GRID
 \*-----------------------------------*/
@@ -42,22 +33,7 @@
 	padding: 0 1.5rem;
 }
 
-.grid {
-	margin-left: -3%;
-	max-width: 105%;
-}
 
-.unit {
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	vertical-align: top;
-	margin-left: 3%;
-	margin-right: -.25em;
-	/* Clearfix */
-	overflow: hidden;
-	*overflow: visible;
-}
 
 	.unit.demo {
 		background-color: #fff8eb;
@@ -67,21 +43,8 @@
 		margin-bottom: 1.5rem;
 	}
 
-.one-of-four { width: 22.05%; }
-.three-of-four { width: 72%; margin-top: 85px; padding-left: 20px;}
 
-@media screen and (max-width: 650px) {
-	.grid {
-		margin-left: 0;
-		max-width: none;
-	}
 
-	.unit {
-		width: auto;
-		margin-left: 0;
-		display: block;
-	}
-}
 
 /*-----------------------------------*\
 	$TYPE
@@ -101,12 +64,12 @@ h1, .alpha, h2, .beta {
 h1, .alpha {
 	color: black;
 	font-size: 60px;
-	font-size: 3rem;
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1;
-	margin-top: 100px;
-	margin-bottom: 40px;
-	padding-bottom: 10px;
+	margin-top: 1em;
+	margin-bottom: .75em;
+	padding-bottom: .2em;
 	border-bottom: 2px solid black;
 }
 
@@ -187,20 +150,9 @@ html {
 	font: 125%/1.5 'Open Sans', sans-serif;
 }
 
-@media screen and (max-width: 650px) {
-	html {
-		font-size: 100%;
-	}
-}
 
-.nav {
-	top: 10px;
-	position: fixed;
-	left: 20px;
-	
-}
 
-.foot {
+.footer {
 	color: #FFF;
 	padding: 10px 10px;
 	background-color: black;
@@ -208,3 +160,54 @@ html {
 	display: block;
 	width: 100%;
 }
+
+.wrap {
+	width: 90%;
+	max-width: 1020px;
+	margin: 0 auto;
+}
+
+/*==================================================================
+	NAV
+  ==================================================================*/
+.nav {
+	text-align: center;
+}
+
+
+
+/*==================================================================
+	BREAKPOINT 1 - MOVING TOWARDS DESKTOP
+  ==================================================================*/
+@media screen and (min-width: 950px) {
+	.nav {
+		top: 10px;
+		position: fixed;
+		left: 20px;
+		text-align: left;
+	}
+	.grid {
+		margin-left: -3%;
+		max-width: 105%;
+	}
+
+	.unit {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		vertical-align: top;
+		margin-left: 3%;
+		margin-right: -.25em;
+		/* Clearfix */
+		overflow: hidden;
+		*overflow: visible;
+	}
+
+	.one-of-four { width: 22.05%; }
+	.three-of-four { width: 72%; margin-top: 85px; padding-left: 20px;}
+
+	h1, .alpha {
+		font-size: 3rem;
+	}
+}
+ 

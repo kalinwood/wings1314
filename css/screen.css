@@ -141,6 +141,15 @@ a.feet:hover {
 	color: #e51936;
 }
 
+a.official {
+	color: #666666;
+	font-weight: 400;
+}
+
+a.official:hover {
+	color: black;
+	font-weight: 400;
+}
 
 /*-----------------------------------*\
 	$MAIN
